@@ -53,8 +53,8 @@ const userSchema = new mongoose.Schema({
     if(!this.isModified("password")) return next();
 
 this.password = bcrypt.hash(this.password, 10)
-    next()
-  })
+    next()                         //middlewares (pre)
+  }) // middleware ka kaam jaane se pehle mujhse mil kr jaana
 
   userSchema.methods.isPasswordcorrect = async function(password){
  return await bcrypt.compare(password, this.password)

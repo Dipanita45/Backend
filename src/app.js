@@ -18,9 +18,18 @@ app.use(express.static ("public"))  //public assests
 app.use(cookieParser())     //only server can access
 //this is not access by other only information access by server
 
+//routes import 
+
+import userRouter from './routes/user.routes.js'
+
+
+//routes declaration
+app.use("/api/v1/users", userRouter)    //app.use("/users", kisko active krna hai)
+
+
+
+//http://localhost:8000/api/v1/users/register
+
 export { app }
-
-
-
 
 // THEIR IS FOUR ELEMENT :- {err, req, res ,next}
