@@ -38,8 +38,7 @@ if (
     }
 
    const existedUser =  User.findOne({
-      $or :[{ username },{ email }]   
-         // $ symbol se or and nor etc use kr skte hain  Agar same username ya same email already exist karta hai → error throw karo
+  $or :[{ username },{ email }]
     })
     if(existedUser){
       throw new ApiError(409,"User with email or username already exists")
@@ -71,17 +70,17 @@ const user = await User.create({
 })
 
 const createdUser=await User.findById(user._id).select(
-   "-password -refreshToken"     // -ve ka mtlb hai jo hmme nh chaiye unko -ve ke saath likhte hai
+   "-password -refreshToken"
 )
-// Database se user ko dobara fetch karna (by ID)
-// Aur password & refreshToken fields ko remove karke result dena
 
 if(!createdUser){
    throw new ApiError (500,"Something went wrong while registering the user")
 }
+
 return res.status(201).json(
-   new ApiResponse(200,createdUser,"User registerd Sucessfully")      //(status code , data ,message (optional))
+   new ApiResponse(200,createdUser,"User registerd Sucessfully")
 )
+
 })
 
 export {registerUser,}
