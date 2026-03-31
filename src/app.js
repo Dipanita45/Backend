@@ -15,7 +15,7 @@ app.use(express.json({limit: "16kb"}))
 
 app.use(express.urlencoded({extended:true , limit : "16kb"}))
 app.use(express.static ("public"))  //public assests
-app.use(cookieParser())     //only server can access
+app.use(cookieParser())     //only server can access (res,req)
 //this is not access by other only information access by server
 
 //routes import 
