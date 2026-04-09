@@ -485,7 +485,7 @@ const getWatchHistory = asyncHandler(async (req, res) => {
             },
           },
         ],
-        as: "watchHistory", // ✅ FIX
+        as: "watchHistory", 
       },
     },
   ]);
