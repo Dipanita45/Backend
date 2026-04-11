@@ -22,6 +22,7 @@ app.use(cookieParser())     //only server can access (res,req)
 //routes import 
 
 import userRouter from './routes/user.routes.js'
+import healthcheckerRouter from './routes/healthcheck.routes.js'
 
 
 //routes declaration
