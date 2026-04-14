@@ -316,7 +316,7 @@ const existingUser = await User.findById(req.user?._id)
   if(!avatar?.url){
      throw new ApiError(400,"Error while uploading on avatar in cloudinary"
  )}
-  // 🔥 OLD AVATAR DELETE
+  // OLD AVATAR DELETE
   if(existingUser?.avatar){
     const publicId = existingUser.avatar.split("/").pop().split(".")[0]
     await cloudinary.uploader.destroy(publicId)
