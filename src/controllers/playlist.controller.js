@@ -160,7 +160,7 @@ const playlist = await Playlist.findOneAndUpdate(
             description
         }
     },
-    { new: true } // updated data return karega
+    { new: true } // updated(or replace krta hai) data return karega 
 );
     })
     
